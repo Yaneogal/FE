@@ -4,7 +4,7 @@ import '../../css/regionModal.scss'
 
 const RegionModal = (props) => {
 
-  const { region, selectedRegion, setRegion, showRegionModal, closeRegionModal, editdata, is_edit} = props;
+  const { region, selectedRegion, setRegion, showRegionModal, closeRegionModal, cancelRegionModal, is_edit} = props;
   
   const isChecked = (e) =>{
     if (e.target.checked){
@@ -12,8 +12,6 @@ const RegionModal = (props) => {
     }
   }
     
-  console.log(selectedRegion)
-
   return (
     <div className={showRegionModal ? 'openModal regionWrap': 'regionWrap'}>
       {showRegionModal ?
@@ -53,9 +51,14 @@ const RegionModal = (props) => {
               )
             })}
             </div>
-            <div className="doneButton">
-              <button className="close" onClick={closeRegionModal}>선택완료</button>
-            </div>
+            <div className="buttons">
+              <div className="cancelButton">
+                <button className="cancel" onClick={cancelRegionModal}>취소</button>
+              </div>
+              <div className="doneButton">
+                <button className="close" onClick={closeRegionModal}>선택완료</button>
+              </div>
+            </div>  
           </section>
         </div>
       </div> : null}

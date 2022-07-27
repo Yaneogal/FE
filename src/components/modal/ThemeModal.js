@@ -4,10 +4,8 @@ import '../../css/themeModal.scss'
 
 const ThemeModal = (props) => {
 
-  const { theme, selectedTheme, setTheme, showThemeModal, closeThemeModal, editdata, is_edit} = props;
+  const { theme, selectedTheme, setTheme, showThemeModal, closeThemeModal, cancelThemeModal} = props;
   
-
-  console.log(selectedTheme)
 
   return (
     <div className={showThemeModal ? 'openModal themeWrap': 'themeWrap'}>
@@ -49,9 +47,14 @@ const ThemeModal = (props) => {
               )
             })}
             </div>
-            <div className="doneButton">
-              <button className="close" onClick={closeThemeModal}>선택완료</button>
-            </div>
+            <div className="buttons">
+              <div className="cancelButton">
+                <button className="cancel" onClick={cancelThemeModal}>취소</button>
+              </div>
+              <div className="doneButton">
+                <button className="close" onClick={closeThemeModal}>선택완료</button>
+              </div>
+            </div> 
           </section>
         </div>
       </div> : null}
