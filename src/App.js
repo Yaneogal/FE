@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <Route path="/detail/:id" element={<Detail />} />
+      <Routes>
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
     </div>
   );
 }
